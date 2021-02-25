@@ -1,0 +1,22 @@
+{
+  "name": "normphp-package/demo",
+  "description": "normative",
+  "keywords": ["normphp","demo","package"],
+  "homepage": "https://normphp.org",
+  "authors": [
+    {
+      "name": "pizepei",
+      "email": "pizepei@pizepei.com"
+    }
+  ],
+  "require": {
+    "php": ">=7.0.0",
+  },
+  "repositories": {
+  },
+  "autoload": {
+    "psr-4": {
+      "normphpPackage\\demo\\": "src/"
+    }
+  }
+}

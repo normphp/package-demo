@@ -1,0 +1,15 @@
+{
+  "name":"演示demo",
+  "author": "pizepei",
+  "explain": "",
+  "baseAuthGroup": {
+    "systemBasics": {
+      "name":"演示demo",
+      "explain": "演示demo"
+    },
+    "systemUser": {
+      "name":"系统用户",
+      "explain": "演示demo"
+    }
+  }
+}
