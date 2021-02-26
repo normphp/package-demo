@@ -35,6 +35,9 @@ class BasicsDemo extends Controller
         $data =[
             'title'=>'normphp Demo',
             'greet'=>'欢迎使用normphp框架',
+            'OS'=>$this->app->__OS__,
+            'PHP_VERSIONS'=>PHP_VERSION,
+            'NORMPHP_VERSIONS'=>$this->app::VERSIONS,
         ];
         $path = dirname(__DIR__).DIRECTORY_SEPARATOR.'template'.DIRECTORY_SEPARATOR;
         return $this->view('index',$data,$path,'html',false);
