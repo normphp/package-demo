@@ -3,12 +3,8 @@
   "author": "pizepei",
   "explain": "",
   "baseAuthGroup": {
-    "systemBasics": {
+    "systemDemo": {
       "name":"演示demo",
-      "explain": "演示demo"
-    },
-    "systemUser": {
-      "name":"系统用户",
       "explain": "演示demo"
     }
   }
