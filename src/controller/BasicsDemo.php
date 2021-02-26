@@ -27,12 +27,31 @@ class BasicsDemo extends Controller
      * @title  演示入口
      * @explain 演示入口
      * @throws \Exception
-     * @return array [string]
+     * @return string [html]
      * @router get index.html
      */
     public function index(Request $Request)
     {
-        return '欢迎使用normphp框架';
+        $data =[
+            'title'=>'normphp Demo',
+            'greet'=>'欢迎使用normphp框架',
+        ];
+        $path = dirname(__DIR__).DIRECTORY_SEPARATOR.'template'.DIRECTORY_SEPARATOR;
+        return $this->view('index',$data,$path,'html',false);
+    }
+    /**
+     * @Author pizepei
+     * @Created 2019/7/5 22:40
+     * @param \normphp\staging\Request $Request
+     * @title  phpinfo
+     * @explain phpinfo
+     * @throws \Exception
+     * @return string [html]
+     * @router get phpinfo.html
+     */
+    public function phpinfo(Request $Request)
+    {
+        return phpinfo();
     }
 
 }
