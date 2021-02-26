@@ -19,7 +19,24 @@ class BasicsDemo extends Controller
         'basePath'=>'/demo/',//基础路由
         'baseParam'=>'[$Request:normphp\staging\Request]',//依赖注入对象
     ];
-
+    /**
+     * @Author pizepei
+     * @Created 2019/7/5 22:40
+     * @param \normphp\staging\Request $Request
+     *      path [object]
+     *          name [string uuid] 文件名
+     * @title  获取png图标
+     * @explain  png图标
+     * @throws \Exception
+     * @return string [png]
+     * @router get :name[uuid].png
+     */
+    public function svg(Request $Request)
+    {
+        $path = dirname(__DIR__).DIRECTORY_SEPARATOR.'template'.DIRECTORY_SEPARATOR.'png'.DIRECTORY_SEPARATOR;
+        if (is_file($path.$Request->path('name').'.png')){return file_get_contents($path.$Request->path('name').'.png');}
+        return '';
+    }
     /**
      * @Author pizepei
      * @Created 2019/7/5 22:40
@@ -56,23 +73,6 @@ class BasicsDemo extends Controller
     {
         return phpinfo();
     }
-    /**
-     * @Author pizepei
-     * @Created 2019/7/5 22:40
-     * @param \normphp\staging\Request $Request
-     *      path [object]
-     *          name [string] 文件名
-     * @title  phpinfo
-     * @explain phpinfo
-     * @throws \Exception
-     * @return string [png]
-     * @router get :name[string].png
-     */
-    public function svg(Request $Request)
-    {
-        $path = dirname(__DIR__).DIRECTORY_SEPARATOR.'template'.DIRECTORY_SEPARATOR.'png'.DIRECTORY_SEPARATOR;
-        if (is_file($path.$Request->path('name').'.png')){return file_get_contents($path.$Request->path('name').'.png');}
-        return '';
-    }
+
 
 }
