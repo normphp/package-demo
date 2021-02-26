@@ -24,12 +24,12 @@ class BasicsDemo extends Controller
      * @Created 2019/7/5 22:40
      * @param \normphp\staging\Request $Request
      *      path [object]
-     *          name [string uuid] 文件名
+     *          name [string] 文件名
      * @title  获取png图标
      * @explain  png图标
      * @throws \Exception
      * @return string [png]
-     * @router get :name[uuid].png
+     * @router get :name[string].png
      */
     public function svg(Request $Request)
     {
