@@ -56,5 +56,23 @@ class BasicsDemo extends Controller
     {
         return phpinfo();
     }
+    /**
+     * @Author pizepei
+     * @Created 2019/7/5 22:40
+     * @param \normphp\staging\Request $Request
+     *      path [object]
+     *          name [string] 文件名
+     * @title  phpinfo
+     * @explain phpinfo
+     * @throws \Exception
+     * @return string [png]
+     * @router get :name[string].png
+     */
+    public function svg(Request $Request)
+    {
+        $path = dirname(__DIR__).DIRECTORY_SEPARATOR.'template'.DIRECTORY_SEPARATOR.'png'.DIRECTORY_SEPARATOR;
+        if (is_file($path.$Request->path('name').'.png')){return file_get_contents($path.$Request->path('name').'.png');}
+        return '';
+    }
 
 }
