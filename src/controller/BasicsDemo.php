@@ -1,8 +1,11 @@
 <?php
 namespace  normphpPackage\demo\controller;
 
+use normphp\helper\Helper;
 use normphp\staging\Controller;
 use normphp\staging\Request;
+use normphpPackage\demo\model\DemoModel;
+
 /**
  * Class BasicsDemo
  * @package normphpCore\account\controller
@@ -43,6 +46,7 @@ class BasicsDemo extends Controller
      * @param \normphp\staging\Request $Request
      * @title  演示入口
      * @explain 演示入口
+     * 是的是的实打实
      * @throws \Exception
      * @return string [html]
      * @router get index.html
@@ -72,6 +76,22 @@ class BasicsDemo extends Controller
     public function phpinfo(Request $Request)
     {
         return phpinfo();
+    }
+    /**
+     * @Author pizepei
+     * @Created 2022/7/5 22:40
+     * @param \normphp\staging\Request $Request
+     * @title  数据库连接测试
+     * @explain 数据库连接测试
+     * @throws \Exception
+     * @return array [html]
+     * @router get db-test
+     */
+    public function testDat()
+    {
+        return $res = DemoModel::table()->add([
+            'dome_output'=>Helper()->str()->int_rand(4).'-'.Helper()->str()->int_rand(4)
+        ]);
     }
 
 
